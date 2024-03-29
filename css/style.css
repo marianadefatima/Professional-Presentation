@@ -1,121 +1,134 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /*Importação de fonte*/
-/*----------------------------- Estilos Globais -----------------------------*/
-
-:root { /* Variáveis Raiz*/
-    --branco-principal: aliceblue;
-    --azul-principal: blue;
-    --azul-secundario: #167BF7;
+/* Definição de cores e estilos base para todo o site */
+:root {
+  --branco-principal: aliceblue;
+  --azul-principal: #005f73; /* Um tom de azul suave para títulos e cabeçalho */
+  --azul-secundario: #00b4d8; /* Azul secundário para elementos interativos como hover */
+  --texto-principal: #333; /* Cor escura para o texto principal para leitura fácil */
 }
 
-* { /*Aplica a todos os elementos*/
+/* Reset básico para remover margens, paddings e definir box-sizing */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*----------------------------- Estilos do Corpo da página -----------------------------*/
-
-body { /*Estiliza o campo Body do site*/
-    font-family: 'Roboto', sans-serif; /*Define a fonte*/
-    color: var(--azul-secundario); /*Define a cor do texto*/
-    line-height: 1.6; /*Define altura da linha*/
-    padding: 0 25px; /* Espaçamento para não encostar nas bordas*/
-}
-/*----------------------------- Estilos dos títulos -----------------------------*/
-h1.principal-name, h2, h3, p {
-    text-align: center;
-    margin-bottom: 1rem;
+/* Estilos globais para o corpo do documento */
+body {
+  font-family: Arial, sans-serif; /* Fonte legível para o texto do corpo */
+  font-size: 16px; /* Tamanho padrão da fonte */
+  line-height: 1.7; /* Espaçamento da linha para melhorar a leitura */
+  color: var(--texto-principal); /* Cor do texto padrão */
+  background-color: var(--branco-principal); /* Cor de fundo suave para o site */
 }
 
-h1.principal-name {
-    color: var(--azul-principal);
-    font-size: 2.5rem; /* Usando rem para escalabilidade */
+/* Estilos para o cabeçalho da página */
+header {
+  background-color: var(--branco-principal); /* Cor de fundo do cabeçalho */
+  color: var(--azul-principal); /* Cor do texto no cabeçalho */
+  padding: 1rem 0; /* Espaçamento vertical no cabeçalho */
 }
 
-h2 {
-    color: var(--azul-secundario);
-    font-size: 1.5rem;
+/* Removendo estilos padrão da lista e adicionando alinhamento */
+ul {
+  list-style: none; /* Remove marcadores da lista */
+  padding: 0; /* Remove o padding padrão */
+  text-align: right; /* Alinha a lista à direita */
+  margin-right: 4rem; /* Margem à direita para afastar da borda */
 }
 
-h3.sobre-mim{
-  color: var(--azul-principal);
-  font-weight: bold;
+/* Estilos para cada item da lista */
+li {
+  display: inline-block; /* Exibe os itens da lista lado a lado */
+  margin: 20px; /* Espaço entre os itens da lista */
 }
 
-/*----------------------------- Estilos da imagem de perfil -----------------------------*/
-.perfil-container {
-  display: flex; /* Ativa o Flexbox para o contêiner */
-  align-items: center; /* Alinha os itens verticalmente ao centro */
-  justify-content: flex-start; /* Alinha os itens para o início do contêiner */
-  gap: 20px; /* Espaço entre a imagem e o texto */
+/* Estilos para links */
+a {
+  text-decoration: none; /* Remove o sublinhado dos links */
+  color: var(--azul-principal); /* Define a cor padrão dos links */
+  transition: color 0.3s ease-in-out; /* Suaviza a transição de cores ao passar o mouse */
 }
 
-.introductory-text {
-  flex: 1; /* Permite que o texto ocupe o espaço restante */
-  text-align: left; /* Alinha o texto à esquerda */
+/* Estilo para links ao passar o mouse */
+a:hover {
+  color: var(--azul-secundario); /* Muda a cor ao passar o mouse */
 }
 
+/* Estilos para o conteúdo principal */
+main {
+  padding: 20px; /* Espaçamento interno em todo o conteúdo principal */
+}
+
+/* Estilos para seções do conteúdo */
+section {
+  margin-bottom: 20px; /* Espaço abaixo de cada seção */
+  padding: 10px; /* Espaçamento interno para cada seção */
+  text-align: center; /* Centraliza o texto dentro das seções */
+}
+
+/* Estilos para o título principal */
+h1 {
+  font-size: 2.5rem; /* Tamanho maior para o título principal */
+  margin-top: 0; /* Remove a margem superior */
+  margin-bottom: 0.5rem; /* Espaço abaixo do título */
+  color: var(--azul-principal); /* Cor do título */
+}
+
+/* Estilos para parágrafos */
+p {
+  margin-bottom: 1rem; /* Espaço abaixo de cada parágrafo */
+}
+
+/* Estilos para a imagem de perfil */
 .foto-perfil {
-  display: block; /* Faz a imagem se comportar como um bloco, permitindo o uso de margin: auto; */
-  margin: 20px auto; /* Centraliza a imagem horizontalmente */
-  max-width: 25%; /* Limita o tamanho máximo da imagem, ajuste conforme necessário */
-  flex: 0 1 200px; /* Flex-grow, flex-shrink, flex-basis */
-  width: 200px; /* Largura fixa para a imagem */
-  height: auto; /* Altura automática para manter as proporções */
-  border-radius: 10px;
+  width: 200px; /* Largura fixa para a imagem de perfil */
+  height: 200px; /* Altura fixa para manter a proporção */
+  border-radius: 50%; /* Torna a imagem redonda */
+  object-fit: cover; /* Garante que a imagem cubra todo o espaço sem distorção */
+  display: block; /* Garante que a imagem seja tratada como bloco para centralização */
+  margin: 20px auto 1rem auto; /* Margem automática para centralização horizontal */
 }
 
-/*----------------------------- Footer -----------------------------*/
+/* Estilos para o subtítulo da seção 'Sobre mim' */
+.title-text-about-me {
+  font-size: 1.5rem; /* Tamanho do subtítulo */
+  color: var(--azul-secundario); /* Cor do subtítulo */
+  margin-bottom: 1rem; /* Espaço abaixo do subtítulo */
+}
+
+/* Estilos para o texto da seção 'Sobre mim' */
+.text-about-me {
+  text-align: justify; /* Justifica o texto para um fluxo uniforme */
+  margin-bottom: 2rem; /* Espaço abaixo do texto */
+}
+
+/* Estilos para o rodapé */
 footer {
-  text-align: center;
-  margin-top: 20px;
-  padding: 20px;
-  background-color: var(--azul-principal);
-  color: var(--branco-principal);
+  background-color: var(--azul-principal); /* Cor de fundo do rodapé */
+  color: var(--branco-principal); /* Cor do texto no rodapé */
+  padding: 20px; /* Espaçamento interno do rodapé */
+  text-align: center; /* Centraliza o conteúdo do rodapé */
 }
 
-footer a {
-  color: var(--branco-principal);
-  text-decoration: underline;
+/* Estilos para links de e-mail no rodapé */
+footer a[href^="mailto:"] {
+  color: var(--azul-secundario); /* Define a cor do link de e-mail */
+  text-decoration: none; /* Adiciona sublinhado para destacar que é um link clicável */
 }
 
-/* Estilização de menu aprimorada para navegação fluida e responsiva */
-nav ul {
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-}
-
-nav li {
-    margin: 0 1rem;
-    background-color: var(--azul-principal);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-nav a {
-    color: var(--branco-principal);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav li:hover {
-    background-color: var(--azul-secundario);
-    cursor: pointer;
-}
-
-/* Responsividade */
+/* Media queries para garantir responsividade */
 @media (max-width: 768px) {
-  .principal-name {
-      font-size: 2rem;
+  header nav ul {
+    text-align: center; /* Centraliza a navegação no mobile */
   }
 
-  .site-header nav ul {
-      flex-direction: column;
+  header nav li {
+    display: block; /* Itens da lista empilhados verticalmente no mobile */
+    margin: 10px 0; /* Espaçamento vertical entre itens no mobile */
   }
 
-  .site-header nav li {
-      margin: 10px 0;
+  .foto-perfil {
+    width: 150px; /* Reduz a imagem de perfil para telas menores */
   }
 }
