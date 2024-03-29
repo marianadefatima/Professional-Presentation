@@ -1,0 +1,50 @@
+:root {
+    --branco-principal: aliceblue;
+    --azul-principal: blue;
+    --azul-secundario: #167BF7;
+}
+/*---------------- Corpo da página ----------------*/
+body{
+    background-color: var(--branco-principal);
+    font-family: sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*faz com que o navegador não calcule a dimensão de um elemento somando bordas e margens com altura e largura.*/
+    list-style: none; /* Serve para tirar as bolinhas do menu */
+    text-decoration: none; /* retirar a decoração padão */
+}
+/*---------------- Título e parágrafo de apresentação ----------------*/
+h1.principal-name {
+    text-align: center;
+    color: var(--azul-principal);
+    font-size: 42px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: var(--azul-secundario);
+  }
+
+p.introductory-text {
+    text-align: center;
+}
+
+/*--------------------- MENU ----------------------*/
+ul {
+    list-style: none; /*Remove os pontos ou numeração padrão do navegador. */
+    padding: 0; /*Elimina o espaçamento padrão*/
+  }
+  
+  li {
+    display: inline-block; /*Faz a lista se comportar como lista lateral*/
+    margin: 10px; /*Define uma margem em cada um dos itens da lista*/
+    text-decoration: none; /*Remove o sublinhado padrão do navegador*/
+    color:var(--azul-principal); /*Define a cor padrão*/
+  }
+
+  li:hover {/*Passar o mouse sobre o link*/
+    color: var(--azul-secundario); /* Altera a cor do texto dos links quando o usurário passa o mouse*/
+  }
