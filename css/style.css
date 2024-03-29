@@ -1,50 +1,121 @@
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /*Importação de fonte*/
+/*----------------------------- Estilos Globais -----------------------------*/
+
+:root { /* Variáveis Raiz*/
     --branco-principal: aliceblue;
     --azul-principal: blue;
     --azul-secundario: #167BF7;
 }
-/*---------------- Corpo da página ----------------*/
-body{
-    background-color: var(--branco-principal);
-    font-family: sans-serif;
+
+* { /*Aplica a todos os elementos*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;/*faz com que o navegador não calcule a dimensão de um elemento somando bordas e margens com altura e largura.*/
-    list-style: none; /* Serve para tirar as bolinhas do menu */
-    text-decoration: none; /* retirar a decoração padão */
+/*----------------------------- Estilos do Corpo da página -----------------------------*/
+
+body { /*Estiliza o campo Body do site*/
+    font-family: 'Roboto', sans-serif; /*Define a fonte*/
+    color: var(--azul-secundario); /*Define a cor do texto*/
+    line-height: 1.6; /*Define altura da linha*/
+    padding: 0 25px; /* Espaçamento para não encostar nas bordas*/
 }
-/*---------------- Título e parágrafo de apresentação ----------------*/
+/*----------------------------- Estilos dos títulos -----------------------------*/
+h1.principal-name, h2, h3, p {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 h1.principal-name {
-    text-align: center;
     color: var(--azul-principal);
-    font-size: 42px;
-  }
-  
-  h2 {
-    text-align: center;
-    color: var(--azul-secundario);
-  }
-
-p.introductory-text {
-    text-align: center;
+    font-size: 2.5rem; /* Usando rem para escalabilidade */
 }
 
-/*--------------------- MENU ----------------------*/
-ul {
-    list-style: none; /*Remove os pontos ou numeração padrão do navegador. */
-    padding: 0; /*Elimina o espaçamento padrão*/
-  }
-  
-  li {
-    display: inline-block; /*Faz a lista se comportar como lista lateral*/
-    margin: 10px; /*Define uma margem em cada um dos itens da lista*/
-    text-decoration: none; /*Remove o sublinhado padrão do navegador*/
-    color:var(--azul-principal); /*Define a cor padrão*/
+h2 {
+    color: var(--azul-secundario);
+    font-size: 1.5rem;
+}
+
+h3.sobre-mim{
+  color: var(--azul-principal);
+  font-weight: bold;
+}
+
+/*----------------------------- Estilos da imagem de perfil -----------------------------*/
+.perfil-container {
+  display: flex; /* Ativa o Flexbox para o contêiner */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  justify-content: flex-start; /* Alinha os itens para o início do contêiner */
+  gap: 20px; /* Espaço entre a imagem e o texto */
+}
+
+.introductory-text {
+  flex: 1; /* Permite que o texto ocupe o espaço restante */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+.foto-perfil {
+  display: block; /* Faz a imagem se comportar como um bloco, permitindo o uso de margin: auto; */
+  margin: 20px auto; /* Centraliza a imagem horizontalmente */
+  max-width: 25%; /* Limita o tamanho máximo da imagem, ajuste conforme necessário */
+  flex: 0 1 200px; /* Flex-grow, flex-shrink, flex-basis */
+  width: 200px; /* Largura fixa para a imagem */
+  height: auto; /* Altura automática para manter as proporções */
+  border-radius: 10px;
+}
+
+/*----------------------------- Footer -----------------------------*/
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--azul-principal);
+  color: var(--branco-principal);
+}
+
+footer a {
+  color: var(--branco-principal);
+  text-decoration: underline;
+}
+
+/* Estilização de menu aprimorada para navegação fluida e responsiva */
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+nav li {
+    margin: 0 1rem;
+    background-color: var(--azul-principal);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a {
+    color: var(--branco-principal);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav li:hover {
+    background-color: var(--azul-secundario);
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .principal-name {
+      font-size: 2rem;
   }
 
-  li:hover {/*Passar o mouse sobre o link*/
-    color: var(--azul-secundario); /* Altera a cor do texto dos links quando o usurário passa o mouse*/
+  .site-header nav ul {
+      flex-direction: column;
   }
+
+  .site-header nav li {
+      margin: 10px 0;
+  }
+}
